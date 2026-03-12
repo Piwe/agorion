@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Discovery Network — DNS for AI Agents</title>
+    <title>Agorion — The Discovery Network for AI Agents</title>
     <meta
       name="description"
-      content="Agent Discovery Network is the discovery layer for AI agents: find services, compare prices, and pay automatically with x402-compatible flows."
+      content="Agorion is the discovery network for AI agents: find services, compare prices, and pay automatically with x402-compatible flows."
     />
-    <meta property="og:title" content="Agent Discovery Network — DNS for AI Agents" />
+    <meta property="og:title" content="Agorion — The Discovery Network for AI Agents" />
     <meta
       property="og:description"
       content="Find services. Compare prices. Pay automatically. No human in the loop."
     />
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Agent+Discovery+Network" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://agent-discovery.network" />
+    <meta property="og:url" content="https://agorion.dev" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,7 +76,8 @@
 
       .brand {
         font-weight: 700;
-        letter-spacing: 0.01em;
+        font-size: 1.2rem;
+        letter-spacing: 0.02em;
       }
 
       .brand span {
@@ -284,40 +284,40 @@
   <body>
     <header class="site-header">
       <div class="container">
-        <div class="brand">Agent Discovery <span>Network</span></div>
-        <a class="btn btn-secondary" href="https://github.com/andrewglaz/agent-services-discovery-protocol">GitHub</a>
+        <div class="brand">Agorion<span>.</span></div>
+        <a class="btn btn-secondary" href="https://github.com/Cyberweasel777/agorion">GitHub</a>
       </div>
     </header>
 
     <main>
       <section class="hero container">
-        <div class="badge">TRACK E • Agent Discovery Network</div>
-        <h1>The Discovery Layer for AI Agents</h1>
-        <p class="subtitle">Find services. Compare prices. Pay automatically. No human in the loop.</p>
+        <div class="badge">OPEN PROTOCOL • Agent Discovery Network</div>
+        <h1>The Discovery Network for AI Agents</h1>
+        <p class="subtitle">Agents publish what they do. Other agents find them. Services get discovered, priced, and paid — no human in the loop.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#spec">Read the Spec</a>
-          <a class="btn btn-secondary" href="#early-access">Request Early Access</a>
+          <a class="btn btn-secondary" href="#early-access">Join the Network</a>
         </div>
       </section>
 
       <section class="container" id="how-it-works">
         <h2>How It Works</h2>
-        <p class="lead">A simple protocol loop that turns static integrations into dynamic service discovery.</p>
+        <p class="lead">A simple protocol that turns static API integrations into a living discovery network.</p>
         <div class="grid steps">
           <article class="card">
             <div class="step-num">1</div>
-            <h3>Publish manifest</h3>
-            <p>Providers add <code>/.well-known/agent-services.json</code> to declare callable endpoints and terms.</p>
+            <h3>Publish a manifest</h3>
+            <p>Providers add <code>/.well-known/agent-services.json</code> to declare callable endpoints, pricing, and capabilities.</p>
           </article>
           <article class="card">
             <div class="step-num">2</div>
             <h3>Agents discover</h3>
-            <p>Discovery registries index manifests so agents can query by capability, chain, and budget.</p>
+            <p>The Agorion registry indexes manifests so agents can query by capability, chain, price, and reputation.</p>
           </article>
           <article class="card">
             <div class="step-num">3</div>
             <h3>Auto-negotiate &amp; pay</h3>
-            <p>Agents pick highest-value services using price and reputation signals, then settle via x402 when needed.</p>
+            <p>Agents select the best service by price and quality signals, then settle payments via x402 automatically.</p>
           </article>
         </div>
       </section>
@@ -326,13 +326,13 @@
         <div class="grid split">
           <article class="card">
             <h2>For API Providers</h2>
-            <p class="lead">Register your endpoints. Get discovered by thousands of AI agents. Get paid via x402.</p>
-            <p>ASDP lets existing APIs become agent-callable without rebuilding your stack. Publish once, then update services as pricing and capabilities evolve.</p>
+            <p class="lead">Publish your endpoints. Get discovered by AI agents worldwide. Get paid via x402.</p>
+            <p>Agorion lets existing APIs become agent-discoverable without rebuilding your stack. Publish a manifest once, update as pricing and capabilities evolve.</p>
           </article>
           <article class="card">
             <h2>For Agent Builders</h2>
-            <p class="lead">Your agents find the best data sources automatically. Budget-aware. Quality-scored.</p>
-            <p>Replace static API lists with runtime discovery. Route to providers by capability, latency, uptime, and price constraints set by your policy engine.</p>
+            <p class="lead">Your agents find the best data sources at runtime. Budget-aware. Quality-scored.</p>
+            <p>Replace hardcoded API lists with dynamic discovery. Route to providers by capability, latency, uptime, and price constraints set by your policy engine.</p>
           </article>
         </div>
       </section>
@@ -340,19 +340,19 @@
       <section class="container" id="spec">
         <h2>The Spec</h2>
         <p class="lead">
-          ASDP v1 defines the manifest standard, discovery API, payment integration model, and reputation framework.
-          <a href="https://github.com/andrewglaz/agent-services-discovery-protocol/blob/main/agent-services-spec-v1.md">View on GitHub</a>.
+          Agorion v1 defines the manifest standard, discovery API, payment integration, and reputation framework.
+          <a href="https://github.com/Cyberweasel777/agorion/blob/main/agent-services-spec-v1.md">Full spec on GitHub →</a>
         </p>
         <div class="spec-block">
           <pre><code>{
   "schema": "agent-services/v1",
-  "provider": "Example Corp",
-  "contact": "https://example.com",
+  "provider": "Acme AI Corp",
+  "contact": "https://acme-ai.com",
   "services": [
     {
-      "id": "correlation-matrix",
-      "name": "Correlation Matrix",
-      "endpoint": "https://api.example.com/v1/correlation",
+      "id": "market-signals",
+      "name": "Real-Time Market Signals",
+      "endpoint": "https://api.acme-ai.com/v1/signals",
       "method": "GET",
       "auth": {
         "type": "x402",
@@ -361,7 +361,7 @@
         "network": "base"
       },
       "capabilities": ["quant-signals", "market-data"],
-      "rate_limit": "60/hour",
+      "rate_limit": "120/hour",
       "response_format": "application/json",
       "uptime_sla": "99.5%"
     }
@@ -372,8 +372,8 @@
 
       <section class="container" id="early-access">
         <article class="card early-access">
-          <h2>Early Access</h2>
-          <p class="lead">Join the first cohort of providers and agent builders integrating the discovery layer.</p>
+          <h2>Join the Network</h2>
+          <p class="lead">Register as a provider or agent builder. Be part of the first cohort shaping the discovery layer.</p>
           <form id="earlyAccessForm">
             <div>
               <label for="email">Work email</label>
@@ -381,16 +381,16 @@
             </div>
             <button type="submit">Request Access</button>
           </form>
-          <p class="success" id="successMessage">Thanks! We will reach out.</p>
+          <p class="success" id="successMessage">You're in. We'll reach out soon.</p>
         </article>
       </section>
     </main>
 
     <footer>
       <div class="container">
-        Built by the team behind BotIndex and x402 •
-        <a href="https://github.com/andrewglaz/agent-services-discovery-protocol">GitHub</a> •
-        <a href="https://twitter.com/botindex">Twitter</a>
+        Agorion — from the Greek ἀγορά (marketplace) •
+        <a href="https://github.com/Cyberweasel777/agorion">GitHub</a> •
+        <a href="https://twitter.com/cyber_weasel">Twitter</a>
       </div>
     </footer>
 
