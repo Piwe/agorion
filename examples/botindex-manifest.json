@@ -1,0 +1,92 @@
+{
+  "schema": "agent-services/v1",
+  "provider": "BotIndex / Renaldo Corp",
+  "provider_id": "botindex-renaldo",
+  "contact": "https://botindex.ai",
+  "services": [
+    {
+      "id": "trending-coins",
+      "name": "Trending Coins",
+      "description": "Returns a ranked list of currently trending crypto assets and related momentum signals.",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/trending-coins",
+      "method": "GET",
+      "auth": {
+        "type": "none",
+        "price": "free",
+        "currency": "USD",
+        "network": "offchain"
+      },
+      "capabilities": [
+        "crypto-prices",
+        "market-data",
+        "trend-detection"
+      ],
+      "rate_limit": "120/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    },
+    {
+      "id": "whale-alerts",
+      "name": "Whale Alerts",
+      "description": "Streams high-value wallet movements and transfer alerts across major chains.",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/whale-alerts",
+      "method": "GET",
+      "auth": {
+        "type": "none",
+        "price": "free",
+        "currency": "USD",
+        "network": "offchain"
+      },
+      "capabilities": [
+        "whale-tracking",
+        "onchain-alerts",
+        "market-data"
+      ],
+      "rate_limit": "120/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.0%"
+    },
+    {
+      "id": "correlation-matrix",
+      "name": "Correlation Matrix",
+      "description": "Computes rolling correlation coefficients across selected assets and time windows.",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/correlation-matrix",
+      "method": "GET",
+      "auth": {
+        "type": "x402",
+        "price": "$0.01",
+        "currency": "USDC",
+        "network": "base"
+      },
+      "capabilities": [
+        "correlation-analysis",
+        "quant-signals",
+        "market-data"
+      ],
+      "rate_limit": "60/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    },
+    {
+      "id": "creator-scores",
+      "name": "Creator Scores",
+      "description": "Provides quality and influence scores for crypto creators and analyst accounts.",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/creator-scores",
+      "method": "GET",
+      "auth": {
+        "type": "x402",
+        "price": "$0.01",
+        "currency": "USDC",
+        "network": "base"
+      },
+      "capabilities": [
+        "creator-ranking",
+        "social-intel",
+        "signal-scoring"
+      ],
+      "rate_limit": "60/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    }
+  ]
+}

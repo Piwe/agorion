@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-discovery.network/schema/agent-services-v1.schema.json",
+  "title": "Agent Services Discovery Manifest v1",
+  "description": "Schema for .well-known/agent-services.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "provider",
+    "contact",
+    "services"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "agent-services/v1"
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "provider_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,63}$"
+    },
+    "contact": {
+      "type": "string",
+      "format": "uri"
+    },
+    "services": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/service"
+      }
+    }
+  },
+  "$defs": {
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "description",
+        "endpoint",
+        "method",
+        "auth",
+        "capabilities",
+        "rate_limit",
+        "response_format",
+        "uptime_sla"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{2,127}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        "auth": {
+          "$ref": "#/$defs/auth"
+        },
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{1,63}$"
+          }
+        },
+        "rate_limit": {
+          "type": "string",
+          "pattern": "^[0-9]+/(second|minute|hour|day|week|month)$"
+        },
+        "response_format": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200
+        },
+        "uptime_sla": {
+          "type": "string",
+          "pattern": "^(100(\\.0+)?|[0-9]{1,2}(\\.[0-9]+)?)%$"
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "x402",
+            "apikey",
+            "bearer",
+            "none"
+          ]
+        },
+        "price": {
+          "type": "string",
+          "pattern": "^(free|\\$?[0-9]+(\\.[0-9]{1,8})?)$"
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 16
+        },
+        "network": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "x402"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "price",
+              "currency",
+              "network"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
