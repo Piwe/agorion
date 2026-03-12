@@ -8,7 +8,7 @@
       "id": "trending-coins",
       "name": "Trending Coins",
       "description": "Returns a ranked list of currently trending crypto assets and related momentum signals.",
-      "endpoint": "https://king-backend.fly.dev/api/botindex/trending-coins",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/zora/trending-coins",
       "method": "GET",
       "auth": {
         "type": "none",
@@ -29,7 +29,7 @@
       "id": "whale-alerts",
       "name": "Whale Alerts",
       "description": "Streams high-value wallet movements and transfer alerts across major chains.",
-      "endpoint": "https://king-backend.fly.dev/api/botindex/whale-alerts",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/hyperliquid/whale-alerts",
       "method": "GET",
       "auth": {
         "type": "none",
@@ -50,7 +50,7 @@
       "id": "correlation-matrix",
       "name": "Correlation Matrix",
       "description": "Computes rolling correlation coefficients across selected assets and time windows.",
-      "endpoint": "https://king-backend.fly.dev/api/botindex/correlation-matrix",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/hyperliquid/correlation-matrix",
       "method": "GET",
       "auth": {
         "type": "x402",
@@ -71,7 +71,7 @@
       "id": "creator-scores",
       "name": "Creator Scores",
       "description": "Provides quality and influence scores for crypto creators and analyst accounts.",
-      "endpoint": "https://king-backend.fly.dev/api/botindex/creator-scores",
+      "endpoint": "https://king-backend.fly.dev/api/botindex/zora/creator-scores",
       "method": "GET",
       "auth": {
         "type": "x402",
