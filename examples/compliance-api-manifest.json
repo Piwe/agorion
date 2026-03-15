@@ -1,0 +1,74 @@
+{
+  "schema": "agent-services/v1",
+  "provider": "AgentEconomy Compliance API",
+  "provider_id": "agenteconomy-compliance",
+  "contact": "https://compliance-api.agenteconomy.io",
+  "services": [
+    {
+      "id": "kyc-check",
+      "name": "KYC Identity Verification",
+      "description": "Run a KYC identity verification check against OFAC SDN and UN Security Council sanctions lists. Returns verification status, risk score (0-100), sanctions match results, and jurisdiction risk assessment. Powered by real government sanctions data (~19,700 entries).",
+      "endpoint": "https://compliance-api.agenteconomy.io/v1/kyc/check",
+      "method": "POST",
+      "auth": {
+        "type": "x402",
+        "price": "$0.01",
+        "currency": "USDC",
+        "network": "base"
+      },
+      "capabilities": [
+        "kyc-verification",
+        "sanctions-screening",
+        "identity-check",
+        "compliance"
+      ],
+      "rate_limit": "120/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    },
+    {
+      "id": "aml-screen",
+      "name": "AML Sanctions Screening",
+      "description": "Screen an entity against Anti-Money Laundering watchlists including OFAC SDN and UN Security Council consolidated lists. Returns risk level, score, recommendation (approve/review/reject), and detailed match results with Jaro-Winkler fuzzy name matching.",
+      "endpoint": "https://compliance-api.agenteconomy.io/v1/aml/screen",
+      "method": "POST",
+      "auth": {
+        "type": "x402",
+        "price": "$0.05",
+        "currency": "USDC",
+        "network": "base"
+      },
+      "capabilities": [
+        "aml-screening",
+        "sanctions-screening",
+        "watchlist-check",
+        "compliance"
+      ],
+      "rate_limit": "120/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    },
+    {
+      "id": "risk-report",
+      "name": "Regulatory Risk Assessment Report",
+      "description": "Generate a comprehensive regulatory risk assessment report combining KYC verification, AML sanctions screening, and multi-jurisdiction risk analysis. Returns overall risk score, KYC/AML summaries, jurisdiction breakdowns, and actionable recommendations.",
+      "endpoint": "https://compliance-api.agenteconomy.io/v1/risk/report",
+      "method": "POST",
+      "auth": {
+        "type": "x402",
+        "price": "$0.10",
+        "currency": "USDC",
+        "network": "base"
+      },
+      "capabilities": [
+        "risk-assessment",
+        "regulatory-compliance",
+        "jurisdiction-analysis",
+        "compliance"
+      ],
+      "rate_limit": "60/hour",
+      "response_format": "application/json",
+      "uptime_sla": "99.5%"
+    }
+  ]
+}
